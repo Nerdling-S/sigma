@@ -5,8 +5,7 @@ while True:
     words = s.split()
     #divide into cmd & arguments
     cmd = words[0]
-    args = []
-    map(lambda w: args.append(w),words[1:])
+    args = words[1:]
     # quit by whatever means suitable
     if cmd in ['quit', 'exit', 'q', 'bye', 'voetsak']:
         break
