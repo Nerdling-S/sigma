@@ -11,4 +11,4 @@ while True:
         break
     # echo with common misspellings
     elif cmd[:4] in ['echo', 'ehco', 'echp']:
-        print(args)
+        print(' '.join(args))
