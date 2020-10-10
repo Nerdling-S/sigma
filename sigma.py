@@ -14,7 +14,10 @@ while True:
     # echo with common misspellings
     elif cmd in ['echo', 'ehco', 'echp']:
         print(' '.join(args))
-    # open a file/folder
+    # open a file/folder (run a command)
     elif cmd in ['open', 'opem', 'opne', 'ioen', 'o']:
-        if args[0][-1] in ['/', '\\']:
-            os.system('explorer ' + args[0][:-1] + '\\')
+        path = ''.join(map(lambda c:'\\' if (c=="/") else c,args[0]))
+        if os.path.isdir(path):
+            os.system("explorer " + path)
+        else:
+            os.system(path)
