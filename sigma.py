@@ -16,8 +16,8 @@ while True:
         print(' '.join(args))
     # open a file/folder (run a command)
     elif cmd in ['open', 'opem', 'opne', 'ioen', 'o']:
-        path = ''.join(map(lambda c:'\\' if (c=="/") else c,args[0]))
+        path = ''.join(map(lambda c:'\\' if (c=="/") else c,args[0])) + ' ' + ' '.join(args[1:])
         if os.path.isdir(path):
-            os.system("explorer " + path)
+            os.system('explorer "%s"' % path)
         else:
-            os.system(path)
+            os.system('"%s"' % path)
