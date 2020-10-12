@@ -1,4 +1,7 @@
 import os
+import json
+
+js = json.load(open('cmds.json'))
 
 while True:
     # prompt indicator
@@ -20,4 +23,6 @@ while True:
         if os.path.isdir(path):
             os.system('explorer "%s"' % path)
         else:
-            os.system('"%s"' % path)
+            os.system('& "%s"' % path)
+    elif cmd in js:
+        os.system('"%s"' % js[cmd])
