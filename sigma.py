@@ -1,7 +1,7 @@
 import os
 import json
 
-js = json.load(open('cmds.json'))
+js = json.load(open("C:\\Users\\seblf\\Documents\\Python\\Sigma\\cmds.json"))
 
 while True:
     # prompt indicator
