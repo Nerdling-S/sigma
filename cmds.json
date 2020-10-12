@@ -1,5 +1,5 @@
 {
 	"tmp": "explorer C:\\Users\\seblf\\Downloads\\tmp",
-	"teams": "start C:\\Users\\seblf\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Teams.lnk",
-	"onenote": "start C:\\Users\\seblf\\Documents\\Python\\OneNote.lnk"
+	"teams": "\"C:\\Users\\seblf\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Teams.lnk\"",
+	"onenote": "C:\\Users\\seblf\\Documents\\Python\\OneNote.lnk"
 }
