@@ -1,5 +1,5 @@
 {
-	"tmp": "explorer C:\\Users\\seblf\\Downloads\\tmp",
+	"tmp": {"": "explorer C:\\Users\\seblf\\Downloads\\tmp"},
 	"t": {
 		"": "\"C:\\Users\\seblf\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Teams.lnk\"",
 		"screen":{}
