@@ -1,6 +1,8 @@
 import os
 import json
 
+import function_library as flib
+
 js = json.load(open("C:\\Users\\seblf\\Documents\\Python\\Sigma\\cmds.json"))
 
 while True:
@@ -27,3 +29,5 @@ while True:
             os.system("'%s'" % path)
     elif cmd in js:
         os.system("%s" % js[cmd][argstr])
+        if "python" in js[cmd]:
+            getattr(flib, js[cmd]["python"])()
