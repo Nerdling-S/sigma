@@ -11,6 +11,7 @@ while True:
     #divide into cmd & arguments
     cmd = words[0]
     args = words[1:]
+    argstr = ' '.join(args)
     # quit by whatever means suitable
     if cmd in ['quit', 'exit', 'bye', 'voetsak', 'q']:
         break
@@ -25,4 +26,4 @@ while True:
         else:
             os.system("'%s'" % path)
     elif cmd in js:
-        os.system("%s" % js[cmd])
+        os.system("%s" % js[cmd][argstr])
