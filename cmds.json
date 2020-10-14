@@ -1,5 +1,13 @@
 {
 	"tmp": "explorer C:\\Users\\seblf\\Downloads\\tmp",
-	"teams": "\"C:\\Users\\seblf\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Teams.lnk\"",
-	"onenote": "C:\\Users\\seblf\\Documents\\Python\\OneNote.lnk"
+	"t": {
+		"": "\"C:\\Users\\seblf\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Teams.lnk\"",
+		"screen":{}
+	},
+	"n": {
+		"": "C:\\Users\\seblf\\Documents\\Python\\OneNote.lnk",
+		"screen":{
+			"eng": ["screen\\onenote\\english.jpg",140,400,150,440]
+		}
+	}
 }
