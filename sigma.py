@@ -6,6 +6,8 @@ js = json.load(open("C:\\Users\\seblf\\Documents\\Python\\Sigma\\cmds.json"))
 while True:
     # prompt indicator
     s = input("\u001b[36mΣ\u001b[0m ")
+    if not s:
+        continue
     # divide into words
     words = s.split()
     #divide into cmd & arguments
