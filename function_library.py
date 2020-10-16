@@ -25,13 +25,18 @@ def onenote():
     mouse.click(Button.left)
     # open notebooks dialogue
     if checkPic(notebooks["button"]["coords"],notebooks["button"]["png"]):
-        mouse.position = notebooks["button"]["coords"] + (5,5)
+        mouse.position = notebooks["button"]["coords"][:2] + (5,5)
         mouse.click(Button.left)
-    time.sleep(1)
+        time.sleep(1)
+    #
     print(checkPic(notebooks["all"]["coords"],notebooks["all"]["png"]))
+    #
     #open all notebooks
     if not checkPic(notebooks["all"]["coords"],notebooks["all"]["png"]):
-        mouse.postion = notebooks["all"]["coords"]
+        mouse.position = notebooks["all"]["coords"][:2] + (5,5)
+        #
+        print(mouse.position,notebooks["all"]["coords"][:2])
+        #
         mouse.click(Button.left)
 def checkPic(bbox, path):
     sc = ImageGrab.grab(bbox)
