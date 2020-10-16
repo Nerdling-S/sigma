@@ -13,31 +13,39 @@ notebooks = {
         "png":dir+"screen/notebooks.png",
         "coords":(90,120,100,140)
     },
-    "english": {
-        "png":[dir+"screen/onenote/english.png", dir+"screen/onenote/english-new.png"],
-        "coords":(140,400,150,440)
+    "subjects": {
+        "english": {
+            "names":("english","eng","e"),
+            "png":[dir+"screen/onenote/english.png", dir+"screen/onenote/english-new.png"],
+            "coords":(140,400,150,440)
+        }
     }
 }
 
 mouse = Controller()
-def onenote():
+def onenote(nb=""):
     time.sleep(5)
     mouse.click(Button.left)
     # open notebooks dialogue
-    if checkPic(notebooks["button"]["coords"],notebooks["button"]["png"]):
+    if checkPics(notebooks["button"]["coords"],[notebooks["button"]["png"]]):
         mouse.position = notebooks["button"]["coords"][:2] + (5,5)
         mouse.click(Button.left)
-        time.sleep(1)
-    #
-    print(checkPic(notebooks["all"]["coords"],notebooks["all"]["png"]))
-    #
+        time.sleep(.5)
     #open all notebooks
-    if not checkPic(notebooks["all"]["coords"],notebooks["all"]["png"]):
+    if not checkPics(notebooks["all"]["coords"],[notebooks["all"]["png"]]):
         mouse.position = notebooks["all"]["coords"][:2] + (5,5)
-        #
-        print(mouse.position,notebooks["all"]["coords"][:2])
-        #
         mouse.click(Button.left)
-def checkPic(bbox, path):
+        time.sleep(.5)
+    if not nb:
+        return
+    for subj in notebooks["subjects"]:
+        if nb in notebooks["subjects"][subj]["names"] and checkPics(notebooks["subjects"][subj]["coords"],notebooks["subjects"][subj]["png"]):
+            mouse.position = notebooks["subjects"][subj]["coords"][:2]
+            mouse.click(Button.left)
+            break
+def checkPics(bbox, paths):
     sc = ImageGrab.grab(bbox)
-    return False if ImageChops.difference(sc,Image.open(path)).getbbox() else True
+    for path in paths:
+        if not ImageChops.difference(sc,Image.open(path)).getbbox():
+            return True
+    return False

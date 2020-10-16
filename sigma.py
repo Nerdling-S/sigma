@@ -28,6 +28,6 @@ while True:
         else:
             os.system("'%s'" % path)
     elif cmd in js:
-        os.system("%s" % js[cmd][argstr])
+        os.system("%s" % js[cmd][""])
         if "python" in js[cmd]:
-            getattr(flib, js[cmd]["python"])()
+            getattr(flib, js[cmd]["python"])(argstr)
